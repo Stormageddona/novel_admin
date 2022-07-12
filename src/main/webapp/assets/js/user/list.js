@@ -16,6 +16,8 @@ $(function()
             {
                 if (result.list[i].user_nickname != null) temp = '('+ result.list[i].user_nickname +')' 
                 else temp = ''
+                let split = result.list[i].user_birth.split("T")
+
                 let tag = 
                     '<tr>' +
                         '<td>'+ result.list[i].user_seq +'</td>'+
@@ -23,7 +25,7 @@ $(function()
                         '<td>'+ result.list[i].user_name+temp+ 
                         '</td>' +
                         '<td>'+ result.list[i].user_email +'</td>'+
-                        '<td>'+ result.list[i].user_birth +'</td>'+
+                        '<td>'+ split[0] +'</td>'+
                         '<td>'+ result.list[i].user_grade +'</td>'+
                         '<td>'+ result.list[i].user_status +'</td>'+
                         '<td><button class="modify_btn" data-seq="'+ i +'">정보 수정</button>' +

@@ -4,10 +4,33 @@
 <mapper namespace="com.novel.admin.mapper.UserMapper">
 
     <!-- 어드민 -->
+    <select id="selectAdminInfoList" resultType="com.novel.admin.data.AdminInfoVO">
+        select *
+        from admin_info where admin_id like '%${keyword}%'
+        limit 15 offset #{page}
+    </select>
+
     <select id="selectAdminInfo" resultType="com.novel.admin.data.AdminInfoVO">
         select admin_seq,admin_id,admin_nickname,admin_grade 
         from admin_info where admin_id = #{id} and admin_pwd = #{pwd}
     </select>
+
+    <insert id="insertAdminInfo">
+        INSERT INTO admin_info
+        (admin_id, admin_pwd, admin_nickname, admin_grade)
+        VALUES(#{admin_id}, #{admin_pwd}, #{admin_nickname}, #{admin_grade});
+    </insert>
+
+    <update id="updateAdminInfo">
+        UPDATE admin_info
+        SET admin_id=#{admin_id}, admin_pwd=#{admin_pwd}, admin_grade=#{admin_grade}, admin_nickname=#{admin_nickname}
+        WHERE admin_seq=#{admin_seq};
+    </update>
+
+    <delete id="deleteAdminInfo">
+        delete from admin_info where admin_seq=#{seq}
+    </delete>
+
 
 
     <!-- 유저 -->

@@ -11,6 +11,10 @@ import com.novel.admin.data.UserInfoVO;
 public interface UserMapper {
     //어드민
     public AdminInfoVO selectAdminInfo(String id, String pwd) ;
+    public void insertAdminInfo(AdminInfoVO data) ;
+    public void updateAdminInfo(AdminInfoVO data) ;
+    public void deleteAdminInfo(Integer seq) ;
+    public List<AdminInfoVO> selectAdminInfoList(Integer page, String keyword) ;
 
 
     //유저

@@ -150,7 +150,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><button id="modify_submit">등록</button>
+                    <td><button id="modify_submit">수정</button>
                     <button id="modify_cancel">취소</button></td>
                 </tr>
             </table>

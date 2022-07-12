@@ -23,6 +23,12 @@
 
 </head>
 <body>
-    <h1>header</h1>
+    <header>
+        <a href="/user/list">유저 관리</a>
+        <a href="/report/list">신고 관리</a>
+        <c:if test="${user.admin_grade >= 2}">
+            <a href="/admin/list">관리자 관리</a>
+        </c:if>
+    </header>
 </body>
 </html>

@@ -1,17 +1,18 @@
-package com.novel.admin.controller.user;
+package com.novel.admin.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
     
     @GetMapping("/list")
-    public String getUserList()
+    public String getAdminList()
     {
         
-        return "/user/list";
+        return "/admin/list";
     }
 }
+

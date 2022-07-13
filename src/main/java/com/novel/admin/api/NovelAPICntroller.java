@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -48,6 +49,17 @@ public class NovelAPICntroller {
         }
         map.put("status", true) ;
         map.put("message","장르 명이 수정 되었습니다.") ;
+        return map ;
+    }
+
+    @DeleteMapping("/genre")
+    public Map<String,Object> deleteGenreData(@RequestParam Integer seq)
+    {
+        Map<String,Object> map =new LinkedHashMap<String,Object>() ;
+
+        n_mapper.deleteGenreInfo(seq) ;
+        map.put("status", true) ;
+        map.put("message","장르 명이 삭제 되었습니다.") ;
         return map ;
     }
 

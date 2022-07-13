@@ -15,4 +15,8 @@
     <update id="updateGenreInfo">
         update genre_info set gen_name = #{name} where gen_seq = #{seq}
     </update>
+
+    <delete id="deleteGenreInfo">
+        delete from genre_info where gen_seq = #{seq}
+    </delete>
 </mapper>

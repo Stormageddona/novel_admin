@@ -12,4 +12,5 @@ public interface NovelMapper {
     public List<GenreInfoVO> selectGenreList(String keyword, Integer page) ;
     public void insertGenre(String name) ;
     public void updateGenreInfo(Integer seq, String name) ;
+    public void deleteGenreInfo(Integer seq) ;
 }

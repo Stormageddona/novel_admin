@@ -16,7 +16,7 @@ $(function()
                     '<div class="genre_area" data-seq="'+result.list[i].gen_seq+'">' +
                     '<p>'+result.list[i].gen_name+'</p>' +
                     '<button class="genre_modify" data-seq="'+i+'">수정</button>' +
-                    '<button class="genre_delete" data-seq="'+i+'">삭제</button>' +
+                    '<button class="genre_delete" data-seq="'+result.list[i].gen_seq+'">삭제</button>' +
                     '</div>' ;
                 $(".list_area").append(tag); 
             }
@@ -26,6 +26,20 @@ $(function()
                 $(".modify_area").show()
                 $("#input_modify").val(result.list[i].gen_name)
                 $("#modify_submit").attr("data-seq",result.list[i].gen_seq)
+            })
+
+            $(".genre_delete").click(function()
+            {
+                if(!confirm("장르 명을 삭제하시겠습니까?")) return ;
+                $.ajax
+                ({
+                    url:"/api/novel/genre?seq="+ $(this).attr("data-seq"), type:"delete",
+                    success:function(result)
+                    {
+                        alert(result.message) ;
+                        location.reload() ;
+                    } 
+                })
             })
         }
     })
@@ -55,6 +69,8 @@ $(function()
             } 
         })
     })
+
+
 
     $("#modify_cancel").click(function()
     {

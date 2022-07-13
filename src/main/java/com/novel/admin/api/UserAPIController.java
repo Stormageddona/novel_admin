@@ -1,4 +1,4 @@
-package com.novel.admin.api.user;
+package com.novel.admin.api;
 
 import java.util.LinkedHashMap;
 import java.util.List;

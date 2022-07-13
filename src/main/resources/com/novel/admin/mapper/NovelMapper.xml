@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.novel.admin.mapper.NovelMapper">
+
+    <insert id="insertGenre">
+        insert into genre_info (gen_name)
+        values (#{name})
+    </insert>
+
+    <select id="selectGenreList" resultType="com.novel.admin.data.GenreInfoVO">
+        select * from genre_info where gen_name like '%${keyword}%' limit 20 offset #{page}
+    </select>
+
+    <update id="updateGenreInfo">
+        update genre_info set gen_name = #{name} where gen_seq = #{seq}
+    </update>
+</mapper>

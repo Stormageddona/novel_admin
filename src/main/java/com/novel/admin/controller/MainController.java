@@ -16,5 +16,11 @@ public class MainController {
         
         return "/list" ;
     }
+
+    @GetMapping("/genre/list")
+    public String getGenre()
+    {
+        return "/genre" ;
+    }
     
 }

@@ -1,4 +1,4 @@
-package com.novel.admin.api.manager;
+package com.novel.admin.api;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -24,7 +24,7 @@ public class AdminAPIController {
     @Autowired UserMapper u_mapper ;
 
     @GetMapping("/list")
-    public Map<String,Object> getAdminData(@RequestParam @Nullable Integer page,@RequestParam @Nullable String keyword, @RequestParam @Nullable Integer status) throws Exception
+    public Map<String,Object> getAdminData(@RequestParam @Nullable Integer page,@RequestParam @Nullable String keyword) throws Exception
     {
         Map<String,Object> map =new LinkedHashMap<String,Object>() ;
 

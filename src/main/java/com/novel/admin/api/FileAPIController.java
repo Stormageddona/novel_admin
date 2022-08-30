@@ -115,6 +115,7 @@ public class FileAPIController {
             resultMap.put("status",false);
             resultMap.put("message","파일이 존재하지 않습니다.");
             resultMap.put("path",filepath);
+            return resultMap ;
         }
         resultMap.put("status",true);
         resultMap.put("message","파일이 삭제됬습니다.");

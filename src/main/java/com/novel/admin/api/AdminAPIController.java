@@ -41,7 +41,7 @@ public class AdminAPIController {
     }
 
     @DeleteMapping("/list")
-    public Map<String,Object> getAdminData(@RequestParam Integer seq)
+    public Map<String,Object> deleteAdminData(@RequestParam Integer seq)
     {
         Map<String,Object> map =new LinkedHashMap<String,Object>() ;
         u_mapper.deleteAdminInfo(seq);

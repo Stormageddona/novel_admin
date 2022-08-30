@@ -11,7 +11,6 @@ $(function()
         {
             console.log(result.message);
             $(".admin_list tbody").html("") ;
-            let temp = null
             for(let i = 0; i < result.list.length;i++)
             {
                 let tag = 
